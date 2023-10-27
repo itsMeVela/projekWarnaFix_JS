@@ -249,11 +249,30 @@ kotakWarna.style.marginTop = '3%'
 
 //******************************************************************************************************************************************************** */
 //tangkap yang di ingin diberikan event
-const kursor = document.querySelector('.kotakWarna');
+// const kursor = document.querySelector('.kotakWarna');
 
-kursor.addEventListener('mousemove', function(event){
-    const postX = Math.round((event.clientX / kotakWarna.clientWidth) * 255);
-    const postY = Math.round((event.clientY / kotakWarna.clientHeight) * 255);
+// kursor.addEventListener('mousemove', function(event){
+//     const postX = Math.round((event.clientX / window.innerWidth) * 255);
+//     const postY = Math.round((event.clientY / window.innerHeight) * 255);
 
-    document.body.style.backgroundColor = 'rgb(' + postX + ', ' + postY + ', 100)';
+//     document.body.style.backgroundColor = 'rgb(' + postX + ', ' + postY + ', 100)';
+// });
+
+
+document.addEventListener('mousemove', function(event){
+    const kotak = document.querySelector('.kotakWarna');
+    const rect = kotak.getBoundingClientRect();
+    
+    if (
+        //jika kamu bingung bisa tanya chat gpt ya
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom
+    ) {
+        const posX = Math.round((event.clientX - rect.left) / kotak.clientWidth * 255);
+        const posY = Math.round((event.clientY - rect.top) / kotak.clientHeight * 255);
+
+        document.body.style.backgroundColor = 'rgb(' + posX + ', ' + posY + ', 100)';
+    }
 });
