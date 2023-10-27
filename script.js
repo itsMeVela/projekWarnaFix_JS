@@ -40,6 +40,7 @@ Tombol.addEventListener('dblclick', function(){
     document.body.style.backgroundColor = 'white';
 });
 
+//******************************************************************************************************************************************************** */
 // oke berikutnya saya ingin membuat tombol lagi di sebelah tombol sebelumnya. kali ini saya ingin merubah warna bg secra acak setiap kali di klik
 
 const Tombol2 = document.createElement('button');
@@ -88,6 +89,7 @@ teks.style.textAlign = 'center';
 teks.style.fontSize = '20px';
 teks.style.marginTop = '3%';
 
+//******************************************************************************************************************************************************** */
 // berikutnya saya ingin membuat slideder yang terdiri dari r,g,b agar user bisa mengatur warna sesuai kadar rgb tersebut
 
 //oke yang pertama kita buat kotak warna dulu, untuk memberi tau user
@@ -96,9 +98,23 @@ kotak.classList.add('kotak', 'Merah');
 teks.insertAdjacentElement('afterend', kotak);
 //atur style
 kotak.style.marginLeft = '47%';
-kotak.style.marginTop = '3%';
+kotak.style.marginTop = '2%';
 
-//oke  kita buat element slideder dulu
+//teks untuk menampilkan nilai pada kadar setiap rgb
+const nilai = document.createElement('h4');
+const nText = document.createTextNode('Nilai Merah: ');
+
+//rangkai 
+nilai.appendChild(nText);
+
+//kita tampilkan
+kotak.insertAdjacentElement('afterend', nilai);
+nilai.style.marginLeft = '45%'
+nilai.style.marginTop = '15px';
+
+
+
+//oke  kita buat element slideder 
 
 const sliderMerah = document.createElement('input');
 sliderMerah.setAttribute('type', 'range');
@@ -107,6 +123,81 @@ sliderMerah.setAttribute('tittle', 'Merah');
 
 //atur posisi adn style
 sliderMerah.style.marginLeft = '45%';
-sliderMerah.style.marginTop = '1%';
 
-kotak.insertAdjacentElement('afterend', sliderMerah)
+nilai.insertAdjacentElement('afterend', sliderMerah);
+
+
+// oke selanjutnya kita bisa copy pase untuk pembuatan tombolnya
+//******************************************************************************************************************************************************** */
+
+// //kita buat div Hijau
+const kotak2 = document.createElement('div');
+kotak2.classList.add('kotak', 'Hijau');
+sliderMerah.insertAdjacentElement('afterend', kotak2);
+//atur style
+kotak2.style.marginLeft = '47%';
+kotak2.style.marginTop = '2%';
+
+
+//teks untuk menampilkan nilai pada kadar setiap rgb
+const nilai2 = document.createElement('h4');
+const nText2 = document.createTextNode('Nilai Hijau: ');
+
+//rangkai 
+nilai2.appendChild(nText2);
+
+//kita tampilkan
+kotak2.insertAdjacentElement('afterend', nilai2);
+nilai2.style.marginLeft = '45%'
+nilai2.style.marginTop = '15px';
+//atur style
+nilai2.style.marginTop = '1%';
+
+
+//slider Hijau
+const sliderHijau = document.createElement('input');
+sliderHijau.setAttribute('type', 'range');
+sliderHijau.setAttribute('name', 'sHijau');
+sliderHijau.setAttribute('tittle', 'Hijau');
+
+//tampilkan
+nilai2.insertAdjacentElement('afterend', sliderHijau);
+//atur style
+sliderHijau.style.marginLeft = '45%';
+
+//******************************************************************************************************************************************************** */
+
+// //kita buat div Biru
+const kotak3 = document.createElement('div');
+kotak3.classList.add('kotak', 'Biru');
+sliderHijau.insertAdjacentElement('afterend', kotak3);
+//atur style
+kotak3.style.marginLeft = '47%';
+kotak3.style.marginTop = '2%';
+
+//teks untuk menampilkan nilai pada kadar setiap rgb
+const nilai3 = document.createElement('h4');
+const nText3 = document.createTextNode('Nilai Biru: ');
+
+//rangkai 
+nilai3.appendChild(nText3);
+
+//kita tampilkan
+kotak3.insertAdjacentElement('afterend', nilai3);
+nilai3.style.marginLeft = '45%'
+nilai3.style.marginTop = '15px';
+//atur style
+nilai3.style.marginTop = '1%';
+
+//slider Hijau
+const sliderBiru = document.createElement('input');
+sliderBiru.setAttribute('type', 'range');
+sliderBiru.setAttribute('name', 'sBiru');
+sliderBiru.setAttribute('tittle', 'Biru');
+
+//tampilkan
+nilai3.insertAdjacentElement('afterend', sliderBiru);
+//atur style 
+sliderBiru.style.marginLeft = '45%';
+
+//oke tombol sudah
