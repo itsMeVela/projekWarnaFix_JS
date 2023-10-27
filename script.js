@@ -207,8 +207,9 @@ nilai3.insertAdjacentElement('afterend', sliderBiru);
 sliderBiru.style.marginLeft = '45%';
 
 //oke slider sudah dibuat, mari kita buat event, agar user bisa menggesernya
+//******************************************************************************************************************************************************** */
 
-//kita tangkap semuanya, menggunakan querySelector yang semuanya ada attributnya
+//kita tangkap semuanya, menggunakan querySelectorAll yang semuanya ada attributnya
 const range = document.querySelectorAll('input[type="range"]');
 
 range.forEach(function(input){
@@ -219,3 +220,29 @@ range.forEach(function(input){
     document.body.style.backgroundColor = color;
    }) 
 });
+
+//******************************************************************************************************************************************************** */
+
+//oke kali ini saya berniat, membuat kotak yang nantinya sumbu x dan y nya mewakili nilai r dan g, user besas atur bg nya melalui kottak tersebut
+
+//teks 
+const teks2 = document.createElement('p');
+const isiTeks2 = document.createTextNode('Silahkan Anda Bisa Atur Warna Bacground Sesuai Keinginan Anda dengan menggeser mouse pada kotak');
+
+//rangkai
+teks2.appendChild(isiTeks2);
+
+//kita tampilkan
+sliderBiru.insertAdjacentElement('afterend', teks2);
+//atur style pada teks
+teks2.style.textAlign = 'center';
+teks2.style.fontSize = '20px';
+teks2.style.marginTop = '5%';
+
+//kita buat div
+const kotakWarna = document.createElement('div');
+kotakWarna.classList.add('kotakWarna');
+teks2.insertAdjacentElement('afterend', kotakWarna);
+kotakWarna.style.marginLeft ='40%';
+kotakWarna.style. border= '2px solid black';
+kotakWarna.style.marginTop = '3%'
