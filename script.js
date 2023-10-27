@@ -243,7 +243,7 @@ teks2.style.marginTop = '5%';
 const kotakWarna = document.createElement('div');
 kotakWarna.classList.add('kotakWarna');
 teks2.insertAdjacentElement('afterend', kotakWarna);
-kotakWarna.style.marginLeft ='40%';
+kotakWarna.style.marginLeft ='41%';
 kotakWarna.style. border= '2px solid black';
 kotakWarna.style.marginTop = '3%'
 
