@@ -3,8 +3,7 @@ const judul = document.querySelector('#judul');
 judul.style.fontSize = '50px';
 judul.style.textAlign = 'center';
 
-//// kita buat linkBreak dulu atau br, jika dibutuhkan tinggal panggil
-const br = document.createElement('br');
+
 
 
 //buat element tombol, saya ingin membuat tombol ubah warna bg menjadi warna kesukaan saya, dan ketika di doble klik lagi akan kembali semula
@@ -76,5 +75,16 @@ Tombol2.addEventListener('click', function(){
 });
 
 // teks
-const teks = document.createElement('h3');
-const isiTeks = document.createTextNode('Silahkan Anda Bisa Atur sendiri Bacground Sesuai keinginan ada ')
+const teks = document.createElement('p');
+const isiTeks = document.createTextNode('Silahkan Anda Bisa Atur Warna Bacground Sesuai Keinginan Anda');
+
+//rangkai
+teks.appendChild(isiTeks);
+
+//kita tampilkan
+Tombol2.insertAdjacentElement('afterend', teks);
+//atur style pada teks
+teks.style.textAlign = 'center';
+teks.style.fontSize = '20px';
+teks.style.marginTop = '3%';
+
