@@ -120,6 +120,8 @@ const sliderMerah = document.createElement('input');
 sliderMerah.setAttribute('type', 'range');
 sliderMerah.setAttribute('name', 'sMerah');
 sliderMerah.setAttribute('tittle', 'Merah');
+sliderMerah.setAttribute('min', '0');
+sliderMerah.setAttribute('max', '255');
 
 //atur posisi adn style
 sliderMerah.style.marginLeft = '45%';
@@ -159,6 +161,8 @@ const sliderHijau = document.createElement('input');
 sliderHijau.setAttribute('type', 'range');
 sliderHijau.setAttribute('name', 'sHijau');
 sliderHijau.setAttribute('tittle', 'Hijau');
+sliderHijau.setAttribute('min', '0');
+sliderHijau.setAttribute('max', '255');
 
 //tampilkan
 nilai2.insertAdjacentElement('afterend', sliderHijau);
@@ -194,10 +198,24 @@ const sliderBiru = document.createElement('input');
 sliderBiru.setAttribute('type', 'range');
 sliderBiru.setAttribute('name', 'sBiru');
 sliderBiru.setAttribute('tittle', 'Biru');
+sliderBiru.setAttribute('min', '0');
+sliderBiru.setAttribute('max', '255');
 
 //tampilkan
 nilai3.insertAdjacentElement('afterend', sliderBiru);
 //atur style 
 sliderBiru.style.marginLeft = '45%';
 
-//oke tombol sudah
+//oke slider sudah dibuat, mari kita buat event, agar user bisa menggesernya
+
+//kita tangkap semuanya, menggunakan querySelector yang semuanya ada attributnya
+const range = document.querySelectorAll('input[type="range"]');
+
+range.forEach(function(input){
+   //kita buat eventnya
+   input.addEventListener('input', () => {
+    //kita buat methodnya
+    const color = `rgb(${range[0].value}, ${range[1].value}, ${range[2].value} )`;
+    document.body.style.backgroundColor = color;
+   }) 
+});
