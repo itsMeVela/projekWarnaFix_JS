@@ -88,3 +88,25 @@ teks.style.textAlign = 'center';
 teks.style.fontSize = '20px';
 teks.style.marginTop = '3%';
 
+// berikutnya saya ingin membuat slideder yang terdiri dari r,g,b agar user bisa mengatur warna sesuai kadar rgb tersebut
+
+//oke yang pertama kita buat kotak warna dulu, untuk memberi tau user
+const kotak = document.createElement('div');
+kotak.classList.add('kotak', 'Merah');
+teks.insertAdjacentElement('afterend', kotak);
+//atur style
+kotak.style.marginLeft = '47%';
+kotak.style.marginTop = '3%';
+
+//oke  kita buat element slideder dulu
+
+const sliderMerah = document.createElement('input');
+sliderMerah.setAttribute('type', 'range');
+sliderMerah.setAttribute('name', 'sMerah');
+sliderMerah.setAttribute('tittle', 'Merah');
+
+//atur posisi adn style
+sliderMerah.style.marginLeft = '45%';
+sliderMerah.style.marginTop = '1%';
+
+kotak.insertAdjacentElement('afterend', sliderMerah)
