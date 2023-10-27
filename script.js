@@ -238,7 +238,7 @@ sliderBiru.insertAdjacentElement('afterend', teks2);
 teks2.style.textAlign = 'center';
 teks2.style.fontSize = '20px';
 teks2.style.marginTop = '5%';
-
+//******************************************************************************************************************************************************** */
 //kita buat div
 const kotakWarna = document.createElement('div');
 kotakWarna.classList.add('kotakWarna');
@@ -246,3 +246,14 @@ teks2.insertAdjacentElement('afterend', kotakWarna);
 kotakWarna.style.marginLeft ='40%';
 kotakWarna.style. border= '2px solid black';
 kotakWarna.style.marginTop = '3%'
+
+//******************************************************************************************************************************************************** */
+//tangkap yang di ingin diberikan event
+const kursor = document.querySelector('.kotakWarna');
+
+kursor.addEventListener('mousemove', function(event){
+    const postX = Math.round((event.clientX / kotakWarna.clientWidth) * 255);
+    const postY = Math.round((event.clientY / kotakWarna.clientHeight) * 255);
+
+    document.body.style.backgroundColor = 'rgb(' + postX + ', ' + postY + ', 100)';
+});
