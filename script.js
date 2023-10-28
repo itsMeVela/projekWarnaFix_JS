@@ -102,7 +102,7 @@ kotak.style.marginTop = '2%';
 
 //teks untuk menampilkan nilai pada kadar setiap rgb
 const nilai = document.createElement('h4');
-const nText = document.createTextNode('Nilai Merah: ');
+const nText = document.createTextNode('Nilai Merah: 0');
 
 //rangkai 
 nilai.appendChild(nText);
@@ -112,7 +112,7 @@ kotak.insertAdjacentElement('afterend', nilai);
 nilai.style.marginLeft = '45%'
 nilai.style.marginTop = '15px';
 
-
+//kita buat element untuk menampilkan nilai dari Merah
 
 //oke  kita buat element slideder 
 
@@ -122,6 +122,7 @@ sliderMerah.setAttribute('name', 'sMerah');
 sliderMerah.setAttribute('tittle', 'Merah');
 sliderMerah.setAttribute('min', '0');
 sliderMerah.setAttribute('max', '255');
+
 
 //atur posisi adn style
 sliderMerah.style.marginLeft = '45%';
@@ -143,7 +144,7 @@ kotak2.style.marginTop = '2%';
 
 //teks untuk menampilkan nilai pada kadar setiap rgb
 const nilai2 = document.createElement('h4');
-const nText2 = document.createTextNode('Nilai Hijau: ');
+const nText2 = document.createTextNode('Nilai Hijau: 0 ');
 
 //rangkai 
 nilai2.appendChild(nText2);
@@ -164,6 +165,7 @@ sliderHijau.setAttribute('tittle', 'Hijau');
 sliderHijau.setAttribute('min', '0');
 sliderHijau.setAttribute('max', '255');
 
+
 //tampilkan
 nilai2.insertAdjacentElement('afterend', sliderHijau);
 //atur style
@@ -181,7 +183,7 @@ kotak3.style.marginTop = '2%';
 
 //teks untuk menampilkan nilai pada kadar setiap rgb
 const nilai3 = document.createElement('h4');
-const nText3 = document.createTextNode('Nilai Biru: ');
+const nText3 = document.createTextNode('Nilai Biru: 0 ');
 
 //rangkai 
 nilai3.appendChild(nText3);
@@ -201,6 +203,7 @@ sliderBiru.setAttribute('tittle', 'Biru');
 sliderBiru.setAttribute('min', '0');
 sliderBiru.setAttribute('max', '255');
 
+
 //tampilkan
 nilai3.insertAdjacentElement('afterend', sliderBiru);
 //atur style 
@@ -212,13 +215,24 @@ sliderBiru.style.marginLeft = '45%';
 //kita tangkap semuanya, menggunakan querySelectorAll yang semuanya ada attributnya
 const range = document.querySelectorAll('input[type="range"]');
 
-range.forEach(function(input){
-   //kita buat eventnya
-   input.addEventListener('input', () => {
-    //kita buat methodnya
-    const color = `rgb(${range[0].value}, ${range[1].value}, ${range[2].value} )`;
-    document.body.style.backgroundColor = color;
-   }) 
+
+// Buat event listener untuk setiap slider
+range.forEach(function (input) {
+    input.addEventListener('input', () => {
+      // Dapatkan nilai RGB dari setiap slider
+      const redValue = range[0].value;
+      const greenValue = range[1].value;
+      const blueValue = range[2].value;
+  
+      // Tampilkan nilai-nilai tersebut pada elemen teks yang sudah Anda sediakan dengan menggunakan .textContent(ini untuk mengakses teks yang ada di dalam elemen setiap nilai(1-3))
+      nilai.textContent = `Nilai Merah: ${redValue}`;
+      nilai2.textContent = `Nilai Hijau: ${greenValue}`;
+      nilai3.textContent = `Nilai Biru: ${blueValue}`;
+  
+      // Atur warna latar belakang sesuai dengan nilai slider
+      const color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+      document.body.style.backgroundColor = color;
+    });
 });
 
 //******************************************************************************************************************************************************** */
