@@ -97,12 +97,12 @@ const kotak = document.createElement('div');
 kotak.classList.add('kotak', 'Merah');
 teks.insertAdjacentElement('afterend', kotak);
 //atur style
-kotak.style.marginLeft = '47%';
+kotak.style.marginLeft = '48%';
 kotak.style.marginTop = '2%';
 
 //teks untuk menampilkan nilai pada kadar setiap rgb
 const nilai = document.createElement('h4');
-const nText = document.createTextNode('Nilai Merah: 0');
+const nText = document.createTextNode('Kadar Nilai Merah: 0');
 
 //rangkai 
 nilai.appendChild(nText);
@@ -138,13 +138,13 @@ const kotak2 = document.createElement('div');
 kotak2.classList.add('kotak', 'Hijau');
 sliderMerah.insertAdjacentElement('afterend', kotak2);
 //atur style
-kotak2.style.marginLeft = '47%';
+kotak2.style.marginLeft = '48%';
 kotak2.style.marginTop = '2%';
 
 
 //teks untuk menampilkan nilai pada kadar setiap rgb
 const nilai2 = document.createElement('h4');
-const nText2 = document.createTextNode('Nilai Hijau: 0 ');
+const nText2 = document.createTextNode('Kadar Nilai Hijau: 0 ');
 
 //rangkai 
 nilai2.appendChild(nText2);
@@ -178,12 +178,12 @@ const kotak3 = document.createElement('div');
 kotak3.classList.add('kotak', 'Biru');
 sliderHijau.insertAdjacentElement('afterend', kotak3);
 //atur style
-kotak3.style.marginLeft = '47%';
+kotak3.style.marginLeft = '48%';
 kotak3.style.marginTop = '2%';
 
 //teks untuk menampilkan nilai pada kadar setiap rgb
 const nilai3 = document.createElement('h4');
-const nText3 = document.createTextNode('Nilai Biru: 0 ');
+const nText3 = document.createTextNode('Kadar Nilai Biru: 0 ');
 
 //rangkai 
 nilai3.appendChild(nText3);
@@ -225,9 +225,9 @@ range.forEach(function (input) {
       const blueValue = range[2].value;
   
       // Tampilkan nilai-nilai tersebut pada elemen teks yang sudah Anda sediakan dengan menggunakan .textContent(ini untuk mengakses teks yang ada di dalam elemen setiap nilai(1-3))
-      nilai.textContent = `Nilai Merah: ${redValue}`;
-      nilai2.textContent = `Nilai Hijau: ${greenValue}`;
-      nilai3.textContent = `Nilai Biru: ${blueValue}`;
+      nilai.textContent = `Kadar Nilai Merah: ${redValue}`;
+      nilai2.textContent = `Kadar Nilai Hijau: ${greenValue}`;
+      nilai3.textContent = `Kadar Nilai Biru: ${blueValue}`;
   
       // Atur warna latar belakang sesuai dengan nilai slider
       const color = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
